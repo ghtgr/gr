@@ -1,0 +1,203 @@
+<!--文档类型：html-->
+<!DOCTYPE html>
+
+<!--顶层标签，包含网页所有实际内容，网页主要语言：中文简体-->
+<html lang="zh-CN">
+  <!--网页设置-->
+  <head>
+    <!--字典种类-->
+    <meta charset="utf-8" />
+
+    <!--手机上显示宽度等于手机宽度-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--网页标题-->
+    <title>GHT的个人简介</title>
+
+    <!--设置网页样式，定义各种需要的类-->
+    <style>
+      body {
+        margin: 0; /*外边距0*/
+        height: 100vh; /*高度100vh（浏览器视图高度百分比）*/
+        background-color: #eee; /*背景：灰色*/
+      }
+
+      * {
+        border: 0px solid black; /*给所有元素添加黑色边框，方便查看布局*/
+      } /*通用选择器*/
+
+      .flex {
+        display: flex; /*布局样式：弹性盒子（主流布局方式）*/
+      }
+
+      .white {
+        background-color: white; /*背景：白色*/
+      }
+
+      .flex1 {
+        flex: 1; /*盒子填充比例：1*/
+      }
+
+      .column {
+        flex-direction: column; /*盒子排列方向：纵向*/
+      }
+
+      .mg8 {
+        margin: 8px; /*盒子外边距*/
+      }
+
+      .mgr8 {
+        margin-right: 8px; /*盒子右侧外边距*/
+      }
+
+      .mgt8 {
+        margin-top: 8px; /*盒子顶部外边距*/
+      }
+
+      .shadow {
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px; /*设置阴影样式*/
+      }
+
+      .daoHang {
+        padding: 10px 20px; /*盒子上下内边距：20像素，左右内边距*/
+        border-bottom: 1px solid #999; /*底部边框*/
+        font-size: 14px; /*字号*/
+        color: gray; /*颜色*/
+      }
+
+      .xinXi {
+        padding: 10px 20px; /*盒子上下内边距，左右内边距：20像素*/
+        align-items: center; /*主轴居中对齐*/
+        justify-content: center; /*交叉轴居中对齐*/
+        font-size: 14px; /*字号*/
+        font-weight: bold; /*字体加粗*/
+        color: rgb(96, 82, 125); /*颜色*/
+      }
+
+      .neiRong {
+        max-width: 700px; /*最大宽度*/
+        min-width: 60vw; /*最小宽度：屏幕宽度百分比*/
+      }
+
+      .biaoTi {
+        align-items: center; /*主轴居中对齐*/
+        justify-content: center; /*交叉轴居中对齐*/
+        padding-top: 10px; /*盒子顶部内边距*/
+        padding-left: 10px; /*盒子左侧内边距*/
+        padding-right: 10px; /*盒子右侧内边距*/
+        padding-bottom: 5px; /*盒子底部内边距*/
+        font-size: 20px; /*字号：18像素*/
+      }
+
+      .gengXin {
+        align-items: center; /*主轴居中对齐*/
+        justify-content: center; /*交叉轴居中对齐*/
+        padding: 5px; /*盒子内边距*/
+        border-bottom: 1px solid #999; /*底部边框*/
+        font-size: 12px; /*字号*/
+        color: rgb(152, 67, 98); /*颜色*/
+      }
+      .jianJie {
+        padding-left: 10px; /*盒子左侧内边距*/
+        padding-right: 10px; /*盒子右侧内边距*/
+        padding-bottom: 10px; /*盒子底部内边距*/
+        font-size: 14px; /*字号*/
+        flex: 3; /*盒子填充比例：3*/
+      }
+
+      /*当屏幕宽度小于600像素时要改变的css（手机端适配）*/
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none; /*侧边栏不显示*/
+        }
+        .neiRong {
+          min-width: 85vw; /*最小宽度：屏幕宽度百分比*/
+        }
+      }
+    </style>
+  </head>
+
+  <!--网页主体-->
+  <body class="flex">
+    <!--侧边栏，通过样式增加z轴高度-->
+    <div style="width: 200px; z-index: 2" class="ceBian white shadow">
+      <!--头像栏，设置内边距，主轴和交叉轴居中对齐，添加边框区分-->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex"
+      >
+        <img
+          src="https://s11.ax1x.com/2024/01/02/piXzDFU.png"
+          alt="猫猫头没辣"
+          width="50"
+          height="50"
+          style="display: inline"
+        />
+        <div style="margin: 10px; font-size: 18px">
+          <a style="color: black" href="https://ghtgr.github.io/gr/">
+            GHT个人主页
+          </a>
+        </div>
+      </div>
+      <!--导航栏-->
+      <div class="flex1">
+        <!--导航条-->
+        <div class="daoHang">
+          <a
+            style="color: gray"
+            href="https://ghtgr.github.io/gr/personalProfile"
+          >
+            个人简介
+          </a>
+        </div>
+        <div class="daoHang">个人收藏</div>
+        <div class="daoHang">人间小记</div>
+      </div>
+    </div>
+    <!--主区域-->
+    <div class="flex flex1 column">
+      <!--头部栏，通过样式增加z轴高度-->
+      <div style="height: 40px; z-index: 1" class="flex white shadow">
+        <!--日期框-->
+        <div class="xinXi">日期</div>
+
+        <!--天气框-->
+        <div class="xinXi">天气</div>
+
+        <!--心情框-->
+        <div class="xinXi">今日心情</div>
+      </div>
+      <!--内容区，设置样式让滚动只发生在内容区-->
+      <div
+        style="overflow: auto; align-self: center"
+        class="flex flex1 column neiRong"
+      >
+        <!--文章栏-->
+        <div class="flex column flex1 white shadow">
+          <!--文章标题-->
+          <div class="flex biaoTi">
+            <div>个人简介</div>
+          </div>
+          <!--更新时间-->
+          <div class="flex gengXin">
+            <div>更新时间：2024.1.2</div>
+          </div>
+          <!--文章内容-->
+          <div class="jianJie mg8">
+            <a href="https://ghtgr.github.io/">个人简历</a>
+            <p>简介内容：暂无</p>
+          </div>
+        </div>
+        <!--底部栏-->
+        <div class="flex column mgt8 white shadow">
+          站长声明：本站无任何不良信息
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
