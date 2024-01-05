@@ -2,85 +2,88 @@
 <!DOCTYPE html>
 <!--顶层标签，包含网页所有实际内容，网页主要语言：中文简体-->
 <html lang="zh-CN">
+  <head>
+    <!--字典种类-->
+    <meta charset="utf-8" />
+    <!--网页标题-->
+    <title>GHT的HTML学习历程</title>
+    <!--手机上显示宽度等于手机宽度-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        margin: 0;
+      }
 
-
-<head>
-  <!--字典种类-->
-  <meta charset="utf-8">
-  <!--网页标题-->
-  <title>GHT的HTML学习历程</title>
-  <!--手机上显示宽度等于手机宽度-->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      margin: 0;
-    }
-
-    * {
+      * {
         border: 0px solid black; /*给所有元素添加黑色边框，方便查看布局*/
       } /*通用选择器*/
 
-      .flex{
-        display: flex;/*布局样式：弹性盒子（主流布局方式）*/
+      .flex {
+        display: flex; /*布局样式：弹性盒子（主流布局方式）*/
       }
-  </style>
-</head>
+    </style>
+  </head>
 
-
-<!--网页主体-->
-<body>
-  <!--头部栏-->
-  <div style="
-      background-color: #f1f1f1;
-      text-align: center;
-      padding: 40px;
-      justify-content: center;
-      flex-direction: column;
+  <!--网页主体-->
+  <body>
+    <!--头部栏-->
+    <div
+      style="
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 40px;
+        justify-content: center;
+        flex-direction: column;
       "
       class="flex"
-      ><!--
+    >
+      <!--
       用div标签将主体分割成几个盒子，并在div标签内设置本区域的样式
       背景颜色：灰色
       文本对齐：居中
       内边距：40像素
       -->
-    <div style="align-self: flex-start;">
-      <a href="https://ghtgr.github.io/gr/">返回主页</a>
-    </div>
-    <div style="justify-content: center;" class="flex">
-      <div style="align-items: center;"class="flex">
-        <img src="https://s11.ax1x.com/2024/01/02/piXzDFU.png" alt="猫猫头没辣" ; width="50" ; height="50" ;/><!--
+      <div style="align-self: flex-start">
+        <a href="https://ghtgr.github.io/gr/">返回主页</a>
+      </div>
+      <div style="justify-content: center" class="flex">
+        <div style="align-items: center" class="flex">
+          <img
+            src="https://s11.ax1x.com/2024/01/02/piXzDFU.png"
+            alt="猫猫头没辣"
+            ;
+            width="50"
+            ;
+            height="50"
+            ;
+          /><!--
         img标签可以添加图片，src内是url链接，
         alt是图片加载错误时的显示文字
         宽度：50像素
         高度：50像素
-        -->
-      </div>
-      <div class="flex">
-        <h1 style="
-          font-size: 28px;
-          "><!--样式
+        --></div>
+        <div class="flex">
+          <h1 style="font-size: 28px">
+            <!--样式
           字号：28像素（h1默认32像素）
           不换行
           -->
-          HTML学习历程
-        </h1><!--h1标签可以添加标题-->
+            HTML学习历程
+          </h1>
+          <!--h1标签可以添加标题-->
+        </div>
       </div>
     </div>
-    
-    
 
-    
-
-  </div>
-
-
-  <div style="
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 15px;
-      line-height: 1.7;
-      "><!--
+    <div
+      style="
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 15px;
+        line-height: 1.7;
+      "
+    >
+      <!--
       用div标签将主体分割成几个盒子，并设置本盒子的样式
       最大宽度：700像素
       外边距：上下边距各30像素，并自动调整左右边距相等（相当于左右居中）
@@ -88,104 +91,137 @@
       行高：1.7倍
       -->
 
-    <p style="
-        font-size: 20px;
-        "><!--
+      <p style="font-size: 20px">
+        <!--
         字号：20像素（默认是16像素）
         -->
-      我的html学习历程：
-    </p><!--p标签可以添加段落-->
-
-    <pstyle=" font-size: 20px; "><!--
-        字号：20像素（默认是16像素）
-        -->
-        首先是我用到的几个学习网站：
-
-        <a href=" https://www.w3school.com.cn/html/html_jianjie.asp" style="
-          color: red;
-          font-size: 14px;
-          padding-right: 10px;
-          "><!--
-          文字颜色：红色
-          字号：14像素（默认是16像素）
-          右侧内间距：10像素
-          -->
-      HTML学习网址
-      </a><!--a标签可以添加链接-->
-
-      <a href="https://imgloc.com/" style="
-          color: blue;
-          font-size: 14px;
-          padding-right: 10px;
-          "><!--
-          文字颜色：蓝色
-          字号：14像素（默认是16像素）
-          右侧内间距：10像素
-          -->
-        图床1
-      </a><!--a标签可以添加链接-->
-
-      <a href="https://imgse.com/#google_vignette" style="
-          color: blue;
-          font-size: 14px;
-          "><!--
-          文字颜色：蓝色
-          字号：14像素（默认是16像素）
-          -->
-        图床2
-      </a><!--a标签可以添加链接-->
-
-      </p><!--p标签可以添加段落-->
+        我的html学习历程：
+      </p>
+      <!--p标签可以添加段落-->
 
       <p>
-        感觉C++学起来比html难多了。。推荐下b站大佬的html课程：<br />
+        首先是我用到的几个网站：
+        <a
+          href=" https://www.w3school.com.cn/html/html_jianjie.asp"
+          style="color: red; font-size: 14px; padding-right: 10px"
+          ><!--
+        文字颜色：红色
+        字号：14像素（默认是16像素）
+        右侧内间距：10像素
+        -->
+          HTML学习网址 </a
+        ><!--a标签可以添加链接-->
 
-        <a href="https://www.bilibili.com/video/BV1hY411j7UM/?spm_id_from=333.337.search-card.all.click" style="
-          color: red;
-          font-size: 14px;
-          "><!--
+        <a
+          href="https://imgse.com/#google_vignette"
+          style="color: blue; font-size: 14px"
+          ><!--
+        文字颜色：蓝色
+        字号：14像素（默认是16像素）
+        -->
+          路过图床 </a
+        ><!--a标签可以添加链接-->
+      </p>
+      <!--p标签可以添加段落-->
+
+      <p>
+        感觉C++学起来比html难多了。。首先推荐下b站大佬的html课程：<br />
+
+        <a
+          href="https://www.bilibili.com/video/BV1hY411j7UM/?spm_id_from=333.337.search-card.all.click"
+          style="color: red; font-size: 14px"
+          ><!--
           文字颜色：红色
           字号：14像素（默认是16像素）
           -->
-          https://www.bilibili.com/video/BV1hY411j7UM/?spm_id_from=333.337.search-card.all.click
-        </a><!--a标签可以添加链接-->
+          https://www.bilibili.com/video/BV1hY411j7UM/?spm_id_from=333.337.search-card.all.click </a
+        ><!--a标签可以添加链接-->
+        <br />
+        我就是通过这位大佬的课程入坑前端的，他的讲解非常深入浅出，适合各种萌新学习。
+      </p>
+      <!--p标签可以添加段落-->
 
-      </p><!--p标签可以添加段落-->
+      <p>我遇到过的问题以自问自答的方式放在下面了，希望能帮助到大家。</p>
+      <!--p标签可以添加段落-->
 
-      <p>我遇到过的问题：</p><!--p标签可以添加段落-->
+      <p>Q：怎么能把a标签和p标签放在一行里？<br />A：将a标签放在p标签内。</p>
+      <!--p标签可以添加段落-->
 
-      <p>Q：怎么能把a标签和p标签放在一行里？<br />A：将a标签放在p标签内。</p><!--p标签可以添加段落-->
+      <p>
+        Q：怎么能把两个p标签放在一行里？<br />A：样式里用display:
+        inline;设置不换行（似乎用不到啊）。
+      </p>
+      <!--p标签可以添加段落-->
 
-      <p>Q：怎么能把两个p标签放在一行里？<br />A：样式里用display: inline;设置不换行（似乎用不到啊）。</p><!--p标签可以添加段落-->
+      <p>
+        Q：怎么添加本地图片？<br />A：好像不需要添加本地图片，都是直接把图片放在图床上，然后加图片链接。
+      </p>
+      <!--p标签可以添加段落-->
 
-      <p>Q：怎么添加本地图片？<br />A：好像不需要添加本地图片。</p><!--p标签可以添加段落-->
+      <p>
+        Q：怎么做到空一行？<br />A：用<
+        br/>（去掉里面的空格），如果直接放在p标签内可以进行换行。
+      </p>
+      <!--p标签可以添加段落-->
 
-      <p>Q：怎么做到空一行？<br />A：用< br/>（去掉里面的空格），如果直接放在p标签内可以进行换行。</p><!--p标签可以添加段落-->
+      <p>
+        Q：怎么实现空很多格？（多余的空格会被浏览器自动省略，回车也一样）<br />A：。
+      </p>
+      <!--p标签可以添加段落-->
 
-      <p>Q：怎么设置多列布局？<br />A：</p><!--p标签可以添加段落-->
+      <p>
+        Q：怎么设置多列布局？<br />A：布局采用css里的flex（弹性布局），基本可以实现绝大部分布局。
+      </p>
+      <!--p标签可以添加段落-->
 
-      <p>Q：怎么更改两个上下相邻文本段落的距离？<br />A：</p><!--p标签可以添加段落-->
-      
-      <p>Q：为啥手机端总经常显示不了图片？<br />A：</p><!--p标签可以添加段落-->
+      <p>
+        Q：怎么更改两个上下相邻文本段落的距离？<br />A：用css里的边距控制，或者直接用br空一行。
+      </p>
+      <!--p标签可以添加段落-->
 
-      <p>VSCode的一些常用快捷键：<br />
-        ctrl + d：选择一个单词后，按下后可以同时选择下一个相同的字符，多按一次就多选一个<br />
-        alt + 鼠标左键：在鼠标点击的地方添加一个新的光标，输入文字可以同时改变多个地方<br />
+      <p>
+        Q：为啥手机端总经常显示不了图片？<br />A：图床问题，换了个图床就可以正常显示了。
+      </p>
+      <!--p标签可以添加段落-->
+
+      <p>Q：如何实现不用代码直接在网页里添加文字图片等信息？<br />A：。</p>
+      <!--p标签可以添加段落-->
+
+      <p>Q：如何实现网页视频播放？<br />A：。</p>
+      <!--p标签可以添加段落-->
+
+      <p>Q：？<br />A：。</p>
+      <!--p标签可以添加段落-->
+
+      <p>Q：？<br />A：。</p>
+      <!--p标签可以添加段落-->
+
+      <br />
+
+      <p>
+        VSCode的一些常用快捷键：<br />
+        ctrl +
+        d：选择一个单词后，按下后可以同时选择下一个相同的字符，多按一次就多选一个<br />
+        alt +
+        鼠标左键：在鼠标点击的地方添加一个新的光标，输入文字可以同时改变多个地方<br />
         alt + shift + 上下键：将这一行复制到上一行或者下一行<br />
         ctrl + f：替换
-      </p><!--p标签可以添加段落-->
+      </p>
+      <!--p标签可以添加段落-->
 
-      <br /> <!--br标签可以换行-->
+      <br />
+      <!--br标签可以换行-->
+    </div>
 
-  </div>
-
-
-  <div style="
-      background-color: #f1f1f1;
-      text-align: center;
-      padding: 40px;
-      font-size: 12px;
-      "><!--
+    <div
+      style="
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 40px;
+        font-size: 12px;
+      "
+    >
+      <!--
       用div标签将主体分割成几个盒子，并在div标签内设置本区域的样式
       背景颜色：灰色
       文本对齐：居中
@@ -193,14 +229,12 @@
       字号：12像素（默认是16像素）
       -->
 
-    <p>ght 版权所有</p><!--p标签可以添加段落-->
-    <a href="">联系不上站长</a><!--a标签可以添加链接-->
-    <a href="https://www.iiice.cn/#/">友情链接</a><!--a标签可以添加链接-->
-
-  </div>
-
-
-</body>
-
-
+      <p>ght 版权所有</p>
+      <!--p标签可以添加段落-->
+      <a href="">联系不上站长</a
+      ><!--a标签可以添加链接-->
+      <a href="https://www.iiice.cn/#/">友情链接</a
+      ><!--a标签可以添加链接-->
+    </div>
+  </body>
 </html>
