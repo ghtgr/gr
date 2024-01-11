@@ -1,3 +1,4 @@
+<!--可以添加不同的搜索引擎，搜索历史，预设地址显示天气信息-->
 <!--文档类型：html-->
 <!DOCTYPE html>
 
@@ -52,13 +53,14 @@
         justify-content: space-between;
         margin-top: 0.7vh;
         flex-direction: row; /*盒子排列方向：横向*/
+        padding-left: 10px;
       }
 
       /* 搜索框容器样式 */
       .searchContainer {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 40vh;
+        margin-top: 38vh;
         margin-bottom: 50vh;
       }
 
@@ -68,10 +70,9 @@
         width: 400px;
         height: 45px;
         background-color: rgba(255, 255, 255, 0.756);
-        border-radius: 30px 0px 0px 30px;
-        padding-left: 30px;
-        background-position: 10px 10px; /*设置背景图片的位置*/
-        color: rgba(83, 83, 83, 0.893);
+        border-radius: 30px 0px 0px 30px; /*边框圆角*/
+        padding-left: 35px;
+        color: rgba(33, 33, 33, 0.893);
         font-size: 20px;
         border: none; /*去除边框*/
       }
@@ -89,7 +90,7 @@
         border: none;
         background-color: rgba(255, 150, 80, 0.677);
         color: #ffffffe8;
-        border-radius: 0px 20px 20px 0px;
+        border-radius: 0px 20px 20px 0px; /*边框圆角*/
         font-size: 20px;
         cursor: pointer;
       }
@@ -101,6 +102,12 @@
 
       /*当屏幕宽度小于600像素时要改变的css（手机端适配）*/
       @media (max-width: 600px) {
+        /* 信息栏样式 */
+        .information {
+          justify-content: center;
+          padding-left: 0px;
+        }
+
         /* 搜索框样式 */
         .search {
           width: 65vw;
@@ -109,11 +116,6 @@
         /* 搜索按钮样式 */
         .searchButton {
           width: 17vw;
-        }
-
-        /* 信息栏样式 */
-        .information {
-          justify-content: center;
         }
       }
     </style>
@@ -152,13 +154,14 @@
       <!--显示当前时间-->
       <div style="color: antiquewhite; display: inline" class="flex">
         <b>当前时间：</b>
-        <div style="display: inline; margin: auto" id="datetime"></div>
+        <div style="display: inline" id="datetime"></div>
       </div>
       <!--显示当前位置，功能制作失败-->
       <div style="color: antiquewhite">
         <div></div>
       </div>
     </div>
+    <!--主体区域-->
     <div class="flex">
       <!--搜索框容器-->
       <div class="flex searchContainer">
