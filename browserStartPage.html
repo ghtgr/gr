@@ -51,16 +51,17 @@
       /* 信息栏样式 */
       .information {
         justify-content: space-between;
-        margin-top: 0.7vh;
+        align-items: center;
         flex-direction: row; /*盒子排列方向：横向*/
         padding-left: 10px;
+        padding-top: 1px;
       }
 
       /* 搜索框容器样式 */
       .searchContainer {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 38vh;
+        margin-top: 35vh;
         margin-bottom: 50vh;
       }
 
@@ -145,7 +146,7 @@
 
       /*定时调用函数*/
       setInterval(
-        "document.getElementById('datetime').innerHTML=new Date().toLocaleDateString()+'\xa0\xa0\xa0'+weekday();",
+        "document.getElementById('datetime').innerHTML=new Date().toLocaleDateString()+'\xa0\xa0'+weekday();",
         1000
       ); /*将用Date函数得到的时间以字符串形式放到id为datetime的盒子里，数据1000毫秒刷新一次*/
 
@@ -175,7 +176,7 @@
     <div class="flex information">
       <!--显示当前日期-->
       <div style="color: antiquewhite; display: inline" class="flex">
-        <b>当前日期：</b>
+        <b>日期：</b>
         <div style="display: inline" id="datetime"></div>
       </div>
       <!--显示当前位置，功能制作失败-->
