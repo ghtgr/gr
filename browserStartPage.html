@@ -121,11 +121,33 @@
     </style>
 
     <script>
+      /*将接收到的星期参数（0-6）转换为字符串*/
+      function weekday() {
+        let day = Number(new Date().getDay());
+        let str = "星期";
+        if (day === 0) {
+          str = str + "日";
+        } else if (day === 1) {
+          str = str + "一";
+        } else if (day === 2) {
+          str = str + "二";
+        } else if (day === 3) {
+          str = str + "三";
+        } else if (day === 4) {
+          str = str + "四";
+        } else if (day === 5) {
+          str = str + "五";
+        } else if (day === 6) {
+          str = str + "六";
+        }
+        return str;
+      }
+
       /*定时调用函数*/
       setInterval(
-        "document.getElementById('datetime').innerHTML=new Date().toLocaleString();",
+        "document.getElementById('datetime').innerHTML=new Date().toLocaleDateString()+'\xa0\xa0\xa0'+weekday();",
         1000
-      ); /*将用Date函数得到的时间数据放到id为datetime的盒子里，数据1000毫秒刷新一次*/
+      ); /*将用Date函数得到的时间以字符串形式放到id为datetime的盒子里，数据1000毫秒刷新一次*/
 
       /*搜索函数*/
       function search() {
@@ -151,9 +173,9 @@
   <body class="flex column">
     <!--信息栏-->
     <div class="flex information">
-      <!--显示当前时间-->
+      <!--显示当前日期-->
       <div style="color: antiquewhite; display: inline" class="flex">
-        <b>当前时间：</b>
+        <b>当前日期：</b>
         <div style="display: inline" id="datetime"></div>
       </div>
       <!--显示当前位置，功能制作失败-->
