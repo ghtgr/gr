@@ -245,9 +245,9 @@ body {
   /*导航栏改变块*/
   .sideChange {
     display: flex;
-    font-size: 20px;
+    font-size: 25px;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     align-items: center;
     z-index: 20;
     background-color: rgba(176, 185, 193, 0.717);
