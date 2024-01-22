@@ -12,225 +12,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!--网页标题-->
-    <title>GHT的个人主页</title>
+    <title>GHT的个人博客</title>
 
-    <!--设置网页样式，定义各种需要的类-->
+    <!--外部样式表-->
+    <link rel="stylesheet" type="text/css" href="blogs_index.css" />
+
+    <!--内部样式表-->
     <style>
-      body {
-        margin: 0; /*外边距0*/
-        height: 100vh; /*高度100vh（浏览器视图高度百分比）*/
-        background-color: #eee; /*背景：灰色*/
-      }
-
+      /*通用选择器*/
       * {
-        border: 0px solid black; /*给所有元素添加黑色边框，方便查看布局*/
-      } /*通用选择器*/
-
-      .flex {
-        display: flex; /*布局样式：弹性盒子（主流布局方式）*/
-      }
-
-      .white {
-        background-color: white; /*背景：白色*/
-      }
-
-      .flex1 {
-        flex: 1; /*盒子填充比例：1*/
-      }
-
-      .column {
-        flex-direction: column; /*盒子排列方向：纵向*/
-      }
-
-      .mg8 {
-        margin: 8px; /*盒子外边距*/
-      }
-
-      .mgr8 {
-        margin-right: 8px; /*盒子右侧外边距*/
-      }
-
-      .mgt8 {
-        margin-top: 8px; /*盒子顶部外边距*/
-      }
-
-      .shadow {
-        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px; /*设置阴影样式*/
-      }
-
-      .daoHang {
-        padding: 10px 20px; /*盒子上下内边距：20像素，左右内边距*/
-        border-bottom: 1px solid #999; /*底部边框*/
-        font-size: 14px; /*字号*/
-        color: gray; /*颜色*/
-      }
-
-      .xinXi {
-        padding: 10px 20px; /*盒子上下内边距，左右内边距：20像素*/
-        align-items: center; /*主轴居中对齐*/
-        justify-content: center; /*交叉轴居中对齐*/
-        font-size: 14px; /*字号*/
-        font-weight: bold; /*字体加粗*/
-        color: rgb(96, 82, 125); /*颜色*/
-      }
-
-      .wenZhang {
-        height: 120px; /*盒子高度*/
-      }
-
-      .biaoTi {
-        padding-top: 10px; /*盒子顶部内边距*/
-        padding-left: 10px; /*盒子左侧内边距*/
-        padding-right: 10px; /*盒子右侧内边距*/
-        padding-bottom: 2px; /*盒子底部内边距*/
-        font-size: 18px; /*字号：18像素*/
-      }
-
-      .qianLv {
-        color: rgb(66, 121, 87); /*颜色*/
-      }
-
-      .gengXin {
-        padding-left: 15px; /*盒子左侧内边距*/
-        padding-top: 5px; /*盒子顶部内边距*/
-        padding-bottom: 5px; /*盒子底部内边距*/
-        height: 25px; /*盒子高度*/
-        font-size: 12px; /*字号*/
-        color: rgb(152, 67, 98); /*颜色*/
-      }
-
-      .jianJie {
-        padding-left: 10px; /*盒子左侧内边距*/
-        padding-right: 10px; /*盒子右侧内边距*/
-        padding-bottom: 10px; /*盒子底部内边距*/
-        font-size: 14px; /*字号*/
-        flex: 3; /*盒子填充比例：3*/
-      }
-
-      /*当屏幕宽度小于600像素时要改变的css（手机端适配）*/
-      @media (max-width: 600px) {
-        .ceBian {
-          display: none; /*侧边栏不显示*/
-        }
-        .youQu {
-          display: none; /*右区不显示*/
-        }
-        .neiRong {
-          max-width: 90vw; /*最大宽度：屏幕宽度百分比*/
-          align-self: center;
-        }
+        /*给所有元素添加黑色边框，方便查看布局*/
+        border: 0px solid rgb(5, 5, 5);
       }
     </style>
+
+    <!--js外链-->
+    <script src="blogs_index.js"></script>
   </head>
 
   <!--网页主体-->
-  <body class="flex">
-    <!--侧边栏，通过样式增加z轴高度-->
-    <div style="width: 200px; z-index: 2" class="ceBian white shadow">
-      <!--头像栏，设置内边距，主轴和交叉轴居中对齐，添加边框区分-->
-      <div
-        style="
-          padding: 10px;
-          align-items: center;
-          justify-content: center;
-          border-bottom: 1px solid #999;
-        "
-        class="flex"
-      >
-        <img
-          src="https://s11.ax1x.com/2024/01/02/piXzDFU.png"
-          alt="猫猫头没辣"
-          width="50"
-          height="50"
-          style="display: inline"
-        />
-        <div style="margin: 10px; font-size: 18px">
-          <a style="color: black" href="https://ghtgr.github.io/gr/">
-            GHT个人主页
-          </a>
-        </div>
+  <body class="bgImage">
+    <!--幕布-->
+    <div class="backdrop" id="backdrop" onclick="closeSide()"></div>
+    <!--侧边栏-->
+    <div class="sideArea shadow bgColor" id="sideArea">
+      <!--主页栏-->
+      <div class="homeBar">
+        <!--头像-->
+        <div
+          class="profilePicture"
+          alt="猫头没辣"
+          title="喵~"
+          id="profilePicture"
+        ></div>
+        <!--昵称-->
+        <div class="nickName">无夜夜夜</div>
       </div>
+
       <!--导航栏-->
-      <div class="flex1">
+      <div class="navigationBar">
         <!--导航条-->
-        <div class="daoHang">
-          <a
-            style="color: gray"
-            href="https://ghtgr.github.io/gr/personalProfile"
-          >
-            个人简介
-          </a>
+        <div class="navigation">
+          <a class="navigationLink" href="">个人简介</a>
         </div>
-        <div class="daoHang">个人收藏</div>
-        <div class="daoHang">人间小记</div>
+        <!--导航条-->
+        <div class="navigation">
+          <a class="navigationLink" href="">个人收藏</a>
+        </div>
+        <!--导航条-->
+        <div class="navigation">
+          <a class="navigationLink" href="">人间小记</a>
+        </div>
       </div>
     </div>
-    <!--主区域-->
-    <div class="flex flex1 column">
-      <!--头部栏，通过样式增加z轴高度-->
-      <div style="height: 40px; z-index: 1" class="flex white shadow">
-        <!--日期框-->
-        <div class="xinXi">日期</div>
 
-        <!--天气框-->
-        <div class="xinXi">天气</div>
+    <!--导航栏改变块-->
+    <button id="sideChange" class="sideChange" onclick="sideChange()">
+      ||
+    </button>
+
+    <!--主体区域-->
+    <div class="bodyArea">
+      <!--信息栏-->
+      <div class="informationBar bgColor shadow">
+        <!--日期框-->
+        <div class="information">
+          <b>日期：</b>
+          <div id="datetime"></div>
+        </div>
+
+        <!--天气框
+        <div class="information"><b>烟台天气：</b></div>-->
 
         <!--心情框-->
-        <div class="xinXi">今日心情</div>
+        <div class="information">
+          <b>心情：</b>
+          <div id="mood"></div>
+        </div>
       </div>
-      <!--内容区，设置样式让滚动只发生在内容区-->
-      <div style="overflow: auto" class="flex flex1 neiRong">
-        <!--左区-->
-        <div style="flex: 3" class="flex column mg8">
-          <!--图片区-->
-          <div class="flex">
-            <!--图片种类-->
-            <div style="height: 100px" class="flex1 mgr8 white shadow">
-              图像
-            </div>
-            <div style="height: 100px" class="flex1 mgr8 white shadow">
-              图像
-            </div>
-            <div style="height: 100px" class="flex1 mgr8 white shadow">
-              图像
-            </div>
-            <div style="height: 100px" class="flex1 white shadow">图像</div>
+
+      <!--内容区-->
+      <div class="contentArea">
+        <!--图像区-->
+        <div class="imageArea">
+          <!--图像块-->
+          <div
+            class="picture"
+            style="
+              background-image: url(https://s11.ax1x.com/2024/01/22/pFZlk24.jpg);
+            "
+          >
+            相机
           </div>
-          <!--文章区-->
-          <div class="flex column">
-            <!--文章项-->
-            <div class="flex column mgt8 white shadow">
-              <!--文章标题-->
-              <div class="flex biaoTi">
-                <a
-                  class="flex1 qianLv"
-                  href="https://ghtgr.github.io/gr/HTMLlearning"
-                >
-                  我的html学习历程
-                </a>
-              </div>
-              <!--更新时间-->
-              <div class="flex1 gengXin">更新时间：2024.1.2</div>
-              <!--文章简介-->
-              <div class="jianJie">
-                简介：我制作的第一个网页，里面记录了一些我学习时用到的网站，还有实践中遇到的一些问题。
-              </div>
-            </div>
-            <div class="flex column wenZhang mgt8 white shadow"></div>
-            <div class="flex column wenZhang mgt8 white shadow"></div>
-            <div class="flex column wenZhang mgt8 white shadow"></div>
-            <div class="flex column wenZhang mgt8 white shadow"></div>
-            <div class="flex column wenZhang mgt8 white shadow">
-              站长声明：本站无任何不良信息
-            </div>
+          <!--图像块-->
+          <div
+            class="picture"
+            style="
+              background-image: url(https://s11.ax1x.com/2024/01/22/pFZdUPA.jpg);
+            "
+          >
+            壁纸
+          </div>
+          <!--图像块-->
+          <div
+            class="picture"
+            style="
+              background-image: url(https://s11.ax1x.com/2024/01/22/pFZdwxP.jpg);
+            "
+          >
+            表情包
+          </div>
+          <!--图像块-->
+          <div
+            class="picture"
+            style="
+              background-image: url(https://s11.ax1x.com/2024/01/22/pFZwneS.jpg);
+            "
+          >
+            截图
           </div>
         </div>
-        <!--右区-->
-        <div style="flex: 1" class="flex column youQu">
-          <!--不知道什么区-->
-          <div style="height: 150px" class="white shadow mgt8">今日随笔</div>
-          <!--留言板-->
-          <div class="flex1 white shadow mgt8">留言板</div>
+
+        <!--博客区-->
+        <div class="blogsArea">
+          <!--博客-->
+          <div class="blog bgColor">
+            <div>标题</div>
+            <div>文章信息栏</div>
+            <div>内容简介</div>
+          </div>
+          <!--博客-->
+          <div class="blog bgColor">内容</div>
+          <!--博客-->
+          <div class="blog bgColor">内容</div>
+          <!--博客-->
+          <div class="blog bgColor">内容</div>
+          <!--博客-->
+          <div class="blog bgColor">内容</div>
+          <!--博客-->
+          <div class="blog bgColor">内容</div>
+
+          <!--底部栏-->
+          <div class="bottomBar bgColor">已经到底了</div>
         </div>
       </div>
     </div>
