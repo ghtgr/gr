@@ -1,0 +1,279 @@
+/*背景颜色*/
+.bgColor {
+  background-color: rgba(240, 248, 255, 0.74);
+}
+
+/*阴影样式*/
+.shadow {
+  box-shadow: rgba(17, 17, 26, 0.273) 0px 0px 16px;
+}
+
+/*暗色模式*/
+.lightBlack {
+  filter: brightness(10%);
+}
+
+/*幕布*/
+.backdrop {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(43, 37, 37, 0.632);
+}
+
+.backdrop:hover {
+  cursor: pointer; /*光标样式：小手*/
+}
+
+/*背景图片*/
+.bgImage {
+  background-image: url(https://s11.ax1x.com/2024/01/11/pFCEVSJ.jpg);
+  background-repeat: no-repeat; /*背景图片是否重复*/
+  background-position: center; /*背景图片位置*/
+  background-size: cover; /*背景图片大小*/
+}
+
+/*头像图片*/
+.profilePicture {
+  display: flex;
+  background-image: url(https://s11.ax1x.com/2024/01/02/piXzDFU.png);
+  background-size: cover; /*背景图片大小*/
+  width: 50px;
+  height: 50px;
+}
+
+/*网页主体*/
+body {
+  display: flex;
+  margin: 0;
+  height: 100vh;
+  flex: 1;
+}
+
+/*侧边栏*/
+.sideArea {
+  display: flex;
+  flex-direction: column;
+  z-index: 100; /*增加z轴高度*/
+  min-width: 200px;
+  max-width: 200px;
+  height: 100%;
+}
+
+/*主页栏*/
+.homeBar {
+  display: flex;
+  height: 12vh;
+  max-width: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.756); /*底部边框样式*/
+  align-items: center;
+  justify-content: center;
+}
+
+/*昵称*/
+.nickName {
+  font-size: 20px;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+/*导航栏*/
+.navigationBar {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/*导航条*/
+.navigation {
+  display: flex;
+  height: 5vh;
+  border-bottom: 1px solid rgba(53, 70, 71, 0.6);
+}
+
+/*导航条，鼠标移到上方时样式*/
+.navigation :hover {
+  background-color: rgba(112, 116, 121, 0.74);
+}
+
+/*导航条链接*/
+.navigationLink {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  color: rgb(0, 0, 0); /*内容颜色*/
+  text-decoration: none; /*文本装饰，删除下划线*/
+  line-height: 12px; /*文本行高，用来使文本在元素内居中*/
+}
+
+/*导航栏改变块*/
+.sideChange {
+  display: none;
+}
+
+/*导航栏改变块，鼠标移到上方时样式*/
+.sideChange:hover {
+  background-color: rgba(236, 247, 255, 0.783);
+  cursor: pointer; /*光标样式：小手*/
+}
+
+/*主体区域*/
+.bodyArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/*信息栏*/
+.informationBar {
+  display: flex;
+  z-index: 1;
+  height: 8vh;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*信息*/
+.information {
+  display: flex;
+  align-items: center;
+  font-size: 14px; /*字号*/
+  color: rgb(96, 82, 125); /*颜色*/
+}
+
+/*内容区*/
+.contentArea {
+  display: flex;
+  flex-direction: column;
+  overflow: auto; /*设置竖向滚动条*/
+  align-items: center;
+}
+
+/*图像区*/
+.imageArea {
+  display: flex;
+  justify-content: space-between;
+  width: 100vh;
+  min-height: 25vh;
+  margin-bottom: 2px;
+  margin-top: 5px;
+}
+
+/*图像*/
+.picture {
+  display: flex;
+  width: 24vh;
+  height: 24vh;
+  margin: 1px;
+  overflow: hidden; /* 当放大的时候图片超出部分隐藏 */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%; /*背景图片大小：宽度，高度*/
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  opacity: 0.85; /*透明度*/
+  filter: brightness(100%); /*亮度*/
+  border-radius: 10px; /*圆角*/
+  text-shadow: 0 0 3px #780ecfd2; /*文本阴影*/
+}
+
+/*图像，鼠标移到上方时样式*/
+.picture:hover {
+  background-size: auto 110%; /* 将背景图片尺寸放大 */
+  transition: background-size 0.3s ease; /* 元素平滑变化时间 */
+  cursor: pointer; /*光标样式：小手*/
+}
+
+/*博客区*/
+.blogsArea {
+  display: flex;
+  flex-direction: column;
+}
+
+/*博客*/
+.blog {
+  display: flex;
+  flex-direction: column;
+  min-height: 30vh;
+  width: 100vh;
+  margin-bottom: 1px;
+  border-radius: 6px; /*圆角*/
+}
+
+/*底部栏*/
+.bottomBar {
+  display: flex;
+  border-radius: 3px; /*圆角*/
+}
+
+/*当屏幕宽度小于600像素时要改变的css（手机端适配）*/
+@media (max-width: 700px) {
+  /*网页主体*/
+  body {
+    background-image: url(https://s11.ax1x.com/2024/01/11/pFCMYZj.jpg);
+    background-size: auto 100%; /*背景图片大小*/
+  }
+
+  /*侧边栏*/
+  .sideArea {
+    display: none; /*不显示*/
+    position: absolute;
+    transition: 0.5s;
+    background-color: rgba(240, 248, 255, 0.822);
+  }
+
+  /*信息栏*/
+  .informationBar {
+    min-height: 5vh;
+    padding: 0;
+  }
+
+  /*信息*/
+  .information {
+    padding-right: 10px; /*盒子右侧内边距*/
+    padding-left: 10px; /*盒子左侧内边距*/
+  }
+
+  /*导航栏改变块*/
+  .sideChange {
+    display: flex;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    z-index: 20;
+    background-color: rgba(176, 185, 193, 0.717);
+    position: absolute;
+    top: 0;
+    bottom: 0; /*position为absolute时，top和bottom同时为0可以使标签占据全部高度*/
+  }
+
+  /*图像区*/
+  .imageArea {
+    flex-wrap: wrap; /*设置弹性盒子排列能否换行*/
+    width: 85vw;
+    min-height: 85vw;
+  }
+
+  /*图像*/
+  .picture {
+    width: 41vw;
+    height: 41vw;
+    flex-wrap: wrap;
+  }
+
+  /*博客*/
+  .blog {
+    min-height: 40vw;
+    width: 85vw;
+    flex: 1;
+  }
+}
