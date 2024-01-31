@@ -218,7 +218,7 @@ body {
 /*当屏幕宽度小于600像素时要改变的css（手机端适配）*/
 @media (max-width: 700px) {
   /*网页主体*/
-  body {
+  .bgImage {
     background-image: url(https://s11.ax1x.com/2024/01/11/pFCMYZj.jpg);
     background-size: auto 100%; /*背景图片大小*/
   }
