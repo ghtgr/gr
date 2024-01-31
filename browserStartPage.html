@@ -55,7 +55,7 @@
         align-items: center;
         flex-direction: row; /*盒子排列方向：横向*/
         padding-left: 10px;
-        padding-top: 0.6vh;
+        height: 4.537%; /*4.537%为背景图黑色部分所占比例*/
       }
 
       /* 搜索框容器样式 */
@@ -124,28 +124,28 @@
 
     <script>
       /*日期格式转换*/
-function date() {
-  let date = new Date().toLocaleDateString(); /*以字符串格式获取年月日*/
-  let dateArr = date.split("/");
-  let dateStr = dateArr[1];
-  dateStr = dateStr + "月" + dateArr[2] + "日";
-  return dateStr;
-}
+      function date() {
+        let date = new Date().toLocaleDateString(); /*以字符串格式获取年月日*/
+        let dateArr = date.split("/");
+        let dateStr = dateArr[1];
+        dateStr = dateStr + "月" + dateArr[2] + "日";
+        return dateStr;
+      }
 
-/*将接收到的星期参数（0-6）转换为字符串*/
-function weekday() {
-  let day = new Date().getDay();
-  let weekStr = "星期";
-  let weekArray = ["日", "一", "二", "三", "四", "五", "六"];
-  weekStr = weekStr + weekArray[day];
-  return weekStr;
-}
+      /*将接收到的星期参数（0-6）转换为字符串*/
+      function weekday() {
+        let day = new Date().getDay();
+        let weekStr = "星期";
+        let weekArray = ["日", "一", "二", "三", "四", "五", "六"];
+        weekStr = weekStr + weekArray[day];
+        return weekStr;
+      }
 
-/*日期显示定时调用函数*/
-setInterval(
-  "document.getElementById('datetime').innerHTML=date()+'\xa0'+weekday();",
-  1000
-); //将用Date函数得到的时间以字符串形式放到id为datetime的盒子里，数据1000毫秒刷新一次
+      /*日期显示定时调用函数*/
+      setInterval(
+        "document.getElementById('datetime').innerHTML=date()+'\xa0'+weekday();",
+        1000
+      ); //将用Date函数得到的时间以字符串形式放到id为datetime的盒子里，数据1000毫秒刷新一次
 
       /*搜索函数*/
       function search() {
