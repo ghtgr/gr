@@ -23,18 +23,27 @@ function closeSide() {
   document.getElementById("profilePicture").style.opacity = "1"; //设置图片透明度
 }
 
+/*日期格式转换*/
+function date() {
+  let date = new Date().toLocaleDateString(); /*以字符串格式获取年月日*/
+  let dateArr = date.split("/");
+  let dateStr = dateArr[1];
+  dateStr = dateStr + "月" + dateArr[2] + "日";
+  return dateStr;
+}
+
 /*将接收到的星期参数（0-6）转换为字符串*/
 function weekday() {
   let day = new Date().getDay();
-  let str = "星期";
-  let dayArray = ["日", "一", "二", "三", "四", "五", "六"];
-  str = str + dayArray[day];
-  return str;
+  let weekStr = "星期";
+  let weekArray = ["日", "一", "二", "三", "四", "五", "六"];
+  weekStr = weekStr + weekArray[day];
+  return weekStr;
 }
 
-/*定时调用函数*/
+/*日期显示定时调用函数*/
 setInterval(
-  "document.getElementById('datetime').innerHTML=new Date().toLocaleDateString()+'\xa0\xa0\xa0'+weekday();",
+  "document.getElementById('datetime').innerHTML=date()+'\xa0'+weekday();",
   1000
 ); //将用Date函数得到的时间以字符串形式放到id为datetime的盒子里，数据1000毫秒刷新一次
 
@@ -64,5 +73,5 @@ function mood() {
   return myMood;
 }
 
-/*定时调用函数*/
+/*情绪显示定时调用函数*/
 setInterval("document.getElementById('mood').innerHTML=mood();", 1000); //将mood函数返回值添加到id为mood的盒子里，数据1000毫秒刷新一次
