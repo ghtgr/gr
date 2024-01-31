@@ -57,7 +57,7 @@ function mood() {
     "飞起",
     "着火",
     "死了",
-    "彻底疯狂",
+    "发疯",
   ]; //声明心情数组
   let myMood =
     moodKind[(month * day * hours * minutes * minutes * minutes) % 13]; //随机一个心情
