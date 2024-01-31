@@ -56,7 +56,7 @@ function mood() {
   let moodKind = [
     "好",
     "乌鱼",
-    "o_o",
+    "o_o",/*发呆*/
     "冒烟",
     "扎铁",
     "发光",
@@ -69,7 +69,7 @@ function mood() {
     "发疯",
   ]; //声明心情数组
   let myMood =
-    moodKind[(month * day * hours * minutes * minutes * minutes) % 13]; //随机一个心情
+    moodKind[(month * day * hours * minutes * minutes * minutes) % moodKind.length]; //随机一个心情
   return myMood;
 }
 
