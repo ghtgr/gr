@@ -89,6 +89,7 @@ body {
 /*导航条*/
 .navigation {
   display: flex;
+  align-items: center;
   height: 5vh;
   border-bottom: 1px solid rgba(53, 70, 71, 0.6);
 }
@@ -101,11 +102,10 @@ body {
 /*导航条链接*/
 .navigationLink {
   flex: 1;
-  align-self: center;
   text-align: center;
   color: rgb(0, 0, 0); /*内容颜色*/
   text-decoration: none; /*文本装饰，删除下划线*/
-  line-height: 100%; /*文本行高，用来使文本在元素内居中*/
+  line-height: 5vh; /*文本行高，与父元素相同，使文本在元素内居中*/
 }
 
 /*导航栏改变块*/
@@ -143,7 +143,7 @@ body {
 .information {
   display: flex;
   align-items: center;
-  line-height: 100%; /*文本行高，用来使文本在元素内居中*/
+  line-height: 5vh; /*文本行高，用来使文本在元素内居中*/
   font-size: 18px; /*字号*/
   color: rgb(96, 82, 125); /*颜色*/
 }
